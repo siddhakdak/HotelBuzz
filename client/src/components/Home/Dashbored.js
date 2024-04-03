@@ -16,7 +16,7 @@ const Dashbored = () => {
 
     // get all bookings
     useEffect(() => {
-        axios.get(`http://localhost:4000/all-bookings/`)
+        axios.get(`https://scaler-api-server.vercel.app/all-bookings/`)
             .then(res => {
                 setData(res.data);
                 setFilterData(res.data);
@@ -85,7 +85,7 @@ const Dashbored = () => {
             return false;
         }
         
-        axios.delete(`http://localhost:4000/delete-booking/${id}`)
+        axios.delete(`https://scaler-api-server.vercel.app/delete-booking/${id}`)
             .then(res => {
                 
                 setData(data.filter(item => item._id !== id));

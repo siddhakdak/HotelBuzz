@@ -21,7 +21,7 @@ const UpdateRoom = () => {
   const [totalBill, setTotalBill] = useState(0);
   const [payment, setPayment] = useState(0);
   useEffect(() => {
-    axios.get(`http://localhost:4000/booking/${id}`)
+    axios.get(`https://scaler-api-server.vercel.app/booking/${id}`)
       .then((res) => {
         setData(res.data);
         setTip(res.data.tip);
@@ -92,7 +92,7 @@ const UpdateRoom = () => {
     if(result == false) {
       return;
     }
-    axios.put(`http://localhost:4000/update-booking/${id}`, updateRoom);
+    axios.put(`https://scaler-api-server.vercel.app/update-booking/${id}`, updateRoom);
     window.location = '/';
   };
   const [check,setCheck] = useState(false);
@@ -100,7 +100,7 @@ const UpdateRoom = () => {
   
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/all-bookings/`)
+      .get(`https://scaler-api-server.vercel.app/all-bookings/`)
       .then((res) => {
         setAllData(res.data);
         
