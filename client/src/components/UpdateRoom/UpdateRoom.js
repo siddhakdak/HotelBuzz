@@ -224,12 +224,7 @@ const UpdateRoom = () => {
                 <th>Total Bill</th>
                 <td>{data.price}</td>
               </tr>
-              <tr>
-                <th>Tip</th>
-                <td>{data.tip}</td>
-                <th>Payment Method</th>
-                <td>{data.paymentMethod}</td>
-              </tr>
+
             </Table>
           </div>
           <form className="row g-3 form-style-5">
@@ -379,46 +374,6 @@ const UpdateRoom = () => {
                   </select>
                 </div>
               </div>
-            </div>
-            <div className="col-md-4 pb-1">
-              <label htmlFor="inputTip" className="form-label">
-                Tip for the staff
-              </label>
-              <input
-                defaultValue={data.tip}
-                value={tip}
-                required
-                onChange={(e) => {
-                  if (e.target.value < 0) {
-                    alert("Tip cannot be negative");
-                    setTip(0);
-                  } else {
-                    setTip(e.target.value);
-                  }
-                }}
-                type="number"
-                className="form-control"
-              />
-            </div>
-            <div className="col-md-4 pb-1">
-              <label htmlFor="inputPaymetMethod" className="form-label">
-                Paymet Method
-              </label>
-              <select
-                onChange={(e) => {
-                  setPayment(e.target.value);
-                }}
-                required
-                id="inputPaymetMethod"
-                className="form-select"
-              >
-                <option defaultValue="" value="">
-                  Choose...
-                </option>
-                <option value="cash">Cash</option>
-                <option value="card">Card</option>
-                <option value="upi">UPI</option>
-              </select>
             </div>
             {availableRooms.length > 0 && (
               <div className="col-md-4 pb-1">

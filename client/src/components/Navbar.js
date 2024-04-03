@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-      <div className="container">
+      <div className="px-5 py-2 custom-bg">
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid nav-content">
-            <Link to="/" className="navbar-brand">
+            <Link to="/" className="navbar-brand text-white fw-bolder fs-3">
               AdminBuzz
             </Link>
-            <button
+            {/* <button
               className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
@@ -20,17 +20,18 @@ const Navbar = () => {
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon" />
-            </button>
+            </button> */}
+            
             <div className="d-flex collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto  mb-lg-0">
                 <li class="nav-item">
-                  <Link to="/" className="nav-link">
+                  <Link to="/" className=" nav-link mx-2 text-white fw-bold">
                     Home
                   </Link>
                 </li>
               </ul>
               <div className="navbar-text">
-                <Link className='text-decoration-none' to="/book-room"> Book Room </Link>
+                <Link className='text-decoration-none fw-bold text-white' to="/book-room"> Book Room </Link>
               </div>
             </div>
           </div>

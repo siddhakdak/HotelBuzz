@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from "moment";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
@@ -60,6 +61,7 @@ const Dashbored = () => {
     }, [checkIn, checkOut])
 
     // delete booking
+
     const handleDelete = async(id) => {
         let userData = data.filter(item => item._id === id);
         let currentTime = Date.parse(new Date())/1000;
@@ -67,6 +69,7 @@ const Dashbored = () => {
         let timeDiff = (checkInTime - currentTime);
         let diffHours = Math.ceil(timeDiff / 3600);
         let refund = 0;
+
         
         if(diffHours > 48){
             refund = 100;
@@ -107,7 +110,7 @@ const Dashbored = () => {
                 {/* button to reset filter */}
                 <div className='row mb-3 table-row'>
                     <div className='col-md-12'>
-                        <button onClick={handleResetFilter} className='btn btn-primary btn-sm'>Reset Filter</button>
+                        <button onClick={handleResetFilter} className='btn btn-warning btn-sm'>Reset Filter</button>
                     </div>
                 </div>
 
@@ -177,7 +180,7 @@ const Dashbored = () => {
                                   <tr key={item._id}>
                                     <td>
                                       <Link
-                                        className="text-decoration-none"
+                                        className="text-decoration-none fw-bolder text-uppercase "
                                         to={`/${item._id}`}
                                       >
                                         {item.name}
@@ -192,7 +195,7 @@ const Dashbored = () => {
                                     <td>
                                       {<DateView newdate={item.checkOut} />}
                                     </td>
-                                    <td>
+                                    <td className='d-flex justify-content-center'>
                                       <button
                                         onClick={() => {
                                           handleDelete(item._id);

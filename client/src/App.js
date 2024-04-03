@@ -5,6 +5,7 @@ import Dashbored from './components/Home/Dashbored';
 import BookRoom from './components/BookRoom/BookRoom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UpdateRoom from './components/UpdateRoom/UpdateRoom';
+import Footer from './components/Footer';
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path='/book-room' element={<BookRoom/>} />
           <Route path='/:id' element={<UpdateRoom />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

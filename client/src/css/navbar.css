@@ -5,9 +5,13 @@
     box-shadow: 1px 1px 9px 1px #63523d;
 }
 
+.custom-bg{
+	background-color: #00211c;
+	color: #ffffff;
+}
+
 .home-page-container {
-    /* padding-top: 100px; */
-    background-image: url(../Images/hotel.jpg);
+	background: #ededed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,12 +19,14 @@
     background-size: cover;
     height: 100vh;
 }
+
 .container.home-content {
 	top:20px;
     width: 80%;
     padding: 30px;
     border: 1px solid white;
-    box-shadow: 1px 2px 8px 3px #0e0e0e;
+	border-radius: 15px;
+    box-shadow: 1px 2px 8px 3px #6b9c5f;
     background: url(../Images/blank.png);
 	min-height: 85%;
 }
@@ -33,16 +39,17 @@
 		padding: 35px;
 		border: 1px solid white;
 		box-shadow: 1px 2px 8px 3px #444444;
-		background: url(../Images/blank.png);
-		background: #f4f7f8;
+		/* background: url(../Images/blank.png); */
+		background: white;
 	}
 	.book-room-container {
 		display: flex;
-		/* margin-top: 100px; */
+		margin-top: 100px;
+		margin-bottom: 50px;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-		background: url(../Images/bookroom.jpg);
+		background: #ededed;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
@@ -50,7 +57,8 @@
 /* media query for 14inch display device */
 @media screen and (max-width: 1400px) {
 	.book-room-form-container {
-		background: #f4f7f8;
+		/* background: #f4f7f8; */
+		background: white;
 		border-top-right-radius: 8px;
 		border-top-left-radius: 8px;
 		border-radius: 8px;
@@ -113,12 +121,14 @@
 	}
 	.home-page-container {
 		height: auto;
+		padding: 10px;
 	}
 	.container.home-content {
 		width: 100%;
+		padding: 10px;
 	}
 	.table-style {
-		font-size: 0.8em;
+		font-size: 0.4em;
 	}
 }
 /* fix position of the table box */
@@ -130,16 +140,16 @@
 .table-style {
 	width: 100%;
 	border-collapse: collapse;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	font-family: sans-serif;
 }
 .table-style thead tr {
-	background-color: #009879;
+	background-color: #014237;
 	color: #ffffff;
 	text-align: left;
 }
 .table-style th, .table-style td {
-	padding: 12px 15px;
+	padding: 10px 15px;
 }
 .table-style tbody tr:nth-of-type(even) {
 	background-color: #f3f3f3;
@@ -153,8 +163,11 @@
 	padding: 10px 20px;
 	margin: 10px auto;
 	padding: 20px;
-	background: #f4f7f8;
-	border-radius: 8px;
+	margin-top: 550px;
+	/* background: #f4f7f8; */
+	background: white;
+	border-radius: 12px;
+	box-shadow: 3px 5px 10px 1px white;
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 .form-style-5 fieldset{

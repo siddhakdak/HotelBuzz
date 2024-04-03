@@ -30,14 +30,14 @@ const bookingSchema = new Schema({
         type: Number,
         required: true
     },
-    paymentMethod : {
-        type: String,
-        required: true
-    },
-    tip : {
-        type: Number,
-        required: true
-    },
+    // paymentMethod : {
+    //     type: String,
+    //     required: true
+    // },
+    // tip : {
+    //     type: Number,
+    //     required: true
+    // },
     createdAt: {
         type: Date,
         default: Date.now

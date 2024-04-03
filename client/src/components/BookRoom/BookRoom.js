@@ -11,9 +11,9 @@ const BookRoom = () => {
   const [checkInTime, setCheckInTime] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [checkOutTime, setCheckOutTime] = useState("");
-  const [tip, setTip] = useState(0);
+  // const [tip, setTip] = useState(0);
   const [totalBill, setTotalBill] = useState(0);
-  const [payment, setPayment] = useState("");
+  // const [payment, setPayment] = useState("");
   const [data, setData] = useState([]);
   const [availableRooms, setAvailableRooms] = useState(["A1","A2","B1","B2","B3","C1","C2","C3","C4","C5"]);
   const [check, setCheck] = useState(false);
@@ -49,7 +49,7 @@ const BookRoom = () => {
       );
     
 
-    if(name == "" || email == "" || checkInDate == "" || checkInTime == "" || checkOutDate == "" || checkOutTime == "" || room == "" || payment == ""){
+    if(name == "" || email == "" || checkInDate == "" || checkInTime == "" || checkOutDate == "" || checkOutTime == "" || room == ""){
       alert("Please fill all the fields");
       return;
     }
@@ -76,9 +76,9 @@ const BookRoom = () => {
       checkOut: Date.parse(`${checkOutDate} ${checkOutTime}:00`) / 1000,
       roomType: room.slice(0, 1),
       roomNumber: room.slice(1, 2),
-      tip: tip,
+      // tip: tip,
       price: totalBill,
-      paymentMethod: payment,
+      // paymentMethod: payment,
     };
     
     // alert(bookRoom);
@@ -149,16 +149,17 @@ const BookRoom = () => {
       let timeDiff = Math.abs(checkOut - checkIn);
       let diffHours = Math.ceil(timeDiff / 3600);
       let total = parseInt(roomPrice) * parseInt(diffHours);
-      total = total + parseInt(tip);
+      total = total;
       setTotalBill(total);
       setCheck(true);
     }
-  }, [room, tip, checkInDate, checkInTime, checkOutDate, checkOutTime]);
+  }, [room, checkInDate, checkInTime, checkOutDate, checkOutTime]);
 
   return (
     <div className="book-room-container">
       <div className="container-xl outer-box">
         <form className="row g-3 form-style-5" ref={form} onSubmit={sendEmail}>
+      <h1 className="fw-bolder d-flex justify-content-center">Book Your Room Now</h1>
           <div className="col-md-6 pb-1">
             <label htmlFor="inputName4" className="form-label">
               Name
@@ -303,7 +304,7 @@ const BookRoom = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 pb-1">
+          {/* <div className="col-md-4 pb-1">
             <label htmlFor="inputTip" className="form-label">
               Tip for the staff
             </label>
@@ -343,7 +344,7 @@ const BookRoom = () => {
               <option value="card">Card</option>
               <option value="upi">UPI</option>
             </select>
-          </div>
+          </div> */}
           {availableRooms.length > 0 && (
             <div className="col-md-4">
               <label htmlFor="inputRoom" className="form-label">
@@ -379,7 +380,7 @@ const BookRoom = () => {
             </div>
           )}
           <div className="d-grid gap-2 col-3 mx-auto">
-            <button type="submit" value="send" className="btn btn-primary center">
+            <button type="submit" value="send" className="btn btn-warning center">
               Book Room
             </button>
           </div>
