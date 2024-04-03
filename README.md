@@ -72,3 +72,5 @@ Technologies used in the project:
 *   Mongoose
 *   NodeJS
 *   Bootstrap
+
+Contact - siddhakdak19@gmail.com
