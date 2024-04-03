@@ -22,7 +22,7 @@ const BookRoom = () => {
   // get all bookings
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/all-bookings/`)
+      .get(`${REACT_APP_API_URL}/all-bookings/`)
       .then((res) => {
         setData(res.data);
       })
