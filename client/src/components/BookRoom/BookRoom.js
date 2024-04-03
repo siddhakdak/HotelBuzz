@@ -22,7 +22,7 @@ const BookRoom = () => {
   // get all bookings
   useEffect(() => {
     axios
-      .get(`https://scaler-api-server.vercel.app/all-bookings/`)
+      .get(`https://scaler-sde-assignment.vercel.app/all-bookings/`)
       .then((res) => {
         setData(res.data);
       })
@@ -82,7 +82,7 @@ const BookRoom = () => {
     };
     
     // alert(bookRoom);
-    axios.post(`https://scaler-api-server.vercel.app/add-booking/`, bookRoom);
+    axios.post(`https://scaler-sde-assignment.vercel.app/add-booking/`, bookRoom);
     window.location = "/";
   };
 
