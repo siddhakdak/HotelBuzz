@@ -22,7 +22,7 @@ const BookRoom = () => {
   // get all bookings
   useEffect(() => {
     axios
-      .get(`https://scaler-api-server.vercel.app//all-bookings/`)
+      .get(`https://scaler-api-server.vercel.app/all-bookings/`)
       .then((res) => {
         setData(res.data);
       })
