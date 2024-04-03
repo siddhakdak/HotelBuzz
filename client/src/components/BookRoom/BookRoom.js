@@ -1,8 +1,10 @@
 // imported modules
 import React from "react";
-import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 const BookRoom = () => {
+  const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [checkInDate, setCheckInDate] = useState("");
@@ -30,8 +32,22 @@ const BookRoom = () => {
   }, []);
 
   // book available room
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
+    emailjs
+      .sendForm('service_qpm3wzh', 'template_rx3v0r4', form.current, {
+        publicKey: 'WluFaz3ykuwYUSr1k',
+      })
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+    
+
     if(name == "" || email == "" || checkInDate == "" || checkInTime == "" || checkOutDate == "" || checkOutTime == "" || room == "" || payment == ""){
       alert("Please fill all the fields");
       return;
@@ -141,7 +157,7 @@ const BookRoom = () => {
   return (
     <div className="book-room-container">
       <div className="container-xl outer-box">
-        <form className="row g-3 form-style-5">
+        <form className="row g-3 form-style-5" ref={form} onSubmit={sendEmail}>
           <div className="col-md-6 pb-1">
             <label htmlFor="inputName4" className="form-label">
               Name
@@ -154,6 +170,7 @@ const BookRoom = () => {
               type="text"
               className="form-control"
               id="inputName4"
+              name="name"
             />
           </div>
           <div className="col-md-6 pb-1">
@@ -168,6 +185,7 @@ const BookRoom = () => {
               type="email"
               className="form-control"
               id="inputEmail4"
+              name="email"
             />
           </div>
           <div className="col-md-6 pb-1">
@@ -184,6 +202,7 @@ const BookRoom = () => {
                   type="date"
                   className="form-control"
                   id="inputCheckInDate"
+                  name="checkIn"
                   placeholder="1234 Main St"
                 />
               </div>
@@ -241,6 +260,7 @@ const BookRoom = () => {
                   className="form-control"
                   id="inputCheckOut"
                   placeholder="1234 Main St"
+                  name="checkOut"
                 />
               </div>
               <div className="col-6">
@@ -300,6 +320,7 @@ const BookRoom = () => {
               }}
               type="number"
               className="form-control"
+              name="tip"
             />
           </div>
           <div className="col-md-4 pb-1">
@@ -313,6 +334,8 @@ const BookRoom = () => {
               required
               id="inputPaymetMethod"
               className="form-select"
+              name="payment"
+
             >
               <option defaultValue="">Choose...</option>
               <option value="cash">Cash</option>
@@ -332,6 +355,7 @@ const BookRoom = () => {
                 required
                 id="inputRoom"
                 className="form-select"
+                name="room"
               >
                 <option defaultValue="">Choose...</option>
                 {availableRooms.map((room, index) => (
@@ -354,12 +378,12 @@ const BookRoom = () => {
             </div>
           )}
           <div className="d-grid gap-2 col-3 mx-auto">
-            <button onClick={handleSubmit} className="btn btn-primary center">
+            <button type="submit" value="send" className="btn btn-primary center">
               Book Room
             </button>
           </div>
           {check && (
-            <div className="alert alert-success" role="alert">
+            <div name="amount" className="alert alert-success" role="alert">
               Total Bill: {totalBill}
             </div>
           )}
@@ -367,7 +391,7 @@ const BookRoom = () => {
       </div>
     </div>
   );
-};
+}
 
 export default BookRoom;
 

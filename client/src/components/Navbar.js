@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid nav-content">
             <Link to="/" className="navbar-brand">
-              Hotel Booking
+              AdminBuzz
             </Link>
             <button
               className="navbar-toggler"

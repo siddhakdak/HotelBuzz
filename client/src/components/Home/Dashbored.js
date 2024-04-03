@@ -21,7 +21,7 @@ const Dashbored = () => {
                 setFilterData(res.data);
             })
             .catch(err => {
-                
+                console.log(err);
             })
     }, [])
 
