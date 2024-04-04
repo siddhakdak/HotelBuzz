@@ -21,6 +21,15 @@ Here're some of the project's best features:
 *   User Updates
 *   Filter Bookings
 
+<h2>ScreenShots</h2>
+
+![screencapture-localhost-3000-2024-04-03-18_54_50](https://github.com/siddhakdak/Scaler-SDE-Assignment/assets/93043922/a13e8d1e-69b0-42c3-a0ed-2cccc8770189)
+
+![screencapture-localhost-3000-2024-04-03-18_55_27](https://github.com/siddhakdak/Scaler-SDE-Assignment/assets/93043922/37e3a6e2-fbd4-4af2-a22d-337c8cc6da5f)
+![screencapture-localhost-3000-book-room-2024-04-03-18_55_07](https://github.com/siddhakdak/Scaler-SDE-Assignment/assets/93043922/c8ac70da-def8-405e-a248-4e3fd36677e3)
+![screencapture-localhost-3000-660d17170999fa8b5a656ee4-2024-04-03-18_55_37](https://github.com/siddhakdak/Scaler-SDE-Assignment/assets/93043922/6d91d281-48d2-4f8f-8f7e-45cae17abd44)
+![screencapture-localhost-3000-660d17170999fa8b5a656ee4-2024-04-03-19_04_21](https://github.com/siddhakdak/Scaler-SDE-Assignment/assets/93043922/0c0ac192-53dc-49d8-8dcc-d6e916028b2a)
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Open Code in Vs Code</p>
@@ -74,3 +83,4 @@ Technologies used in the project:
 *   Bootstrap
 
 Contact - siddhakdak19@gmail.com
+
