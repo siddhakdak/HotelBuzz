@@ -1,4 +1,4 @@
-<h1 align="center" id="title">Scaler SDE Assignment Hotel Room Management Admin App</h1>
+<h1 align="center" id="title"> AdminBuzz -  Hotel Room Management Admin App</h1>
 
 <p align="center"><img src="https://socialify.git.ci/siddhakdak/Scaler-SDE-Assignment/image?font=Inter&amp;language=1&amp;name=1&amp;owner=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
